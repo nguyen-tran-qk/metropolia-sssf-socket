@@ -3,9 +3,15 @@
     <head>
         <title>Socket.IO chat</title>
         <meta charset="utf-8" />
-        <link rel="stylesheet" href="style.css" />
     </head>
     <body>
+        <div id="room">
+            <h4>Select a room:</h4>
+            <div id="selects">
+                <button onclick="joinRoom('music')">Music</button><br />
+                <button onclick="joinRoom('movies')">Movies</button>
+            </div>
+        </div>
         <ul id="messages"></ul>
         <form action="">
             <input id="nickname" autocomplete="off" placeholder="Set a nickname" />

@@ -10,6 +10,12 @@ document.querySelector('form').addEventListener('submit', (event) => {
     inp.value = '';
 });
 
+const joinRoom = (room) => {
+    socket.emit('join room', room);
+    document.getElementById('selects').setAttribute('hidden', true);
+    document.getElementById('room').innerHTML = `You are in room ${room}`;
+}
+
 socket.on('chat message', ({ nickname, message }) => {
     const item = document.createElement('li');
     item.innerHTML = `<b>From ${nickname}</b>: ${message}`;
